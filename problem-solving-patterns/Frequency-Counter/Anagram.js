@@ -11,6 +11,7 @@ Note: You may assume the string contains only lowercase alphabets.
 Time Complexity - O(n)
  */
 
+ //my Solution. 
 function validAnagram(str1, str2){
     let freq1 = {};
     let freq2 = {};
@@ -37,5 +38,23 @@ function validAnagram(str1, str2){
       }
     }
     return true
+}
+
+//shorter solution O(n) 
+function validAnagram1(first, second) {
+  let lookup = {}; 
+  if(first.length != second.length) return false; 
+
+  for(let i = 0; i < first.length; i++) {
+    first[i] in lookup ? lookup[first[i]]++ : lookup[first[i]] = 1; 
+  }
+
+  for(let i = 0; i < second.length; i++) {
+    const current = second[i]; 
+    if(!current in lookup || lookup[current] === 0) return false; 
+    else lookup[current] -= 1; 
+  }
+
+  return true; 
 }
 

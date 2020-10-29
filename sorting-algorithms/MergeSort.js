@@ -35,9 +35,7 @@ function merge (left, right) {
   
     // We need to concat here because there will be one element remaining
     // from either left OR the right
-    return resultArray
-            .concat(left.slice(leftIndex))
-            .concat(right.slice(rightIndex));
+    return [...resultArray, ...left.slice(leftIndex), ...right.slice(rightIndex)]; 
   }
 
-  console.log(mergeSort([1,4,5,3,2])); 
+  console.log(mergeSort([10, -1, 2 , 5, 0 ,6 ,4 , -5])); 

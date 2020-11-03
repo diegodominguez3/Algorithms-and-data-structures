@@ -6,7 +6,6 @@ function reverseVowels(s) {
     
     while(start < end) {
         if(vowels.includes(s[start]) && vowels.includes(s[end])) {
-            console.log('caca'); 
             const temp = s[start]; 
             s[start] = s[end]; 
             s[end] = temp; 

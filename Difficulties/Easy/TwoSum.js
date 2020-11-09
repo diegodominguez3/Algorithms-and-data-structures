@@ -59,4 +59,3 @@ function twoSum3 (nums, target) {
     }
 }
 
-console.log(twoSum([1,2,3,4], 5)); 

@@ -12,7 +12,7 @@ function binaryTreeDiameter(tree) {
         let r = dfs(node.right);
         result = Math.max(result, l + r + 1);
         return Math.max(l, r) + 1;
-    }ß
+    }
 
     return result - 1;
 }

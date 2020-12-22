@@ -6,9 +6,8 @@ function minNumberOfCoinsForChange(n, denoms) {
 
     for (let denom of denoms) {
         for (let amount = 1; amount < numOfCoins.length; amount++) {
-            const temp = numOfCoins[amount];
             if (denom <= amount) {
-                numOfCoins[amount] = Math.min(temp, numOfCoins[amount - denom] + 1);
+                numOfCoins[amount] = Math.min(numOfCoins[amount], numOfCoins[amount - denom] + 1);
             }
         }
     }

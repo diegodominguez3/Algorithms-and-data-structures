@@ -10,9 +10,5 @@ function halvesAreAlike(s) {
         right --; 
         console.log(counter);
     }
-
     return counter === 0; 
-
 };
-
-console.log(halvesAreAlike('book')); 

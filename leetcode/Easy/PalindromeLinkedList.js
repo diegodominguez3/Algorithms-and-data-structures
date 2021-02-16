@@ -10,32 +10,32 @@
  * @return {boolean}
  */
 function isPalindrome(head) {
-  let fast = head; 
-  let slow = head; 
-  
-  while(fast !== null && fast.next !== null) {
+  let fast = head;
+  let slow = head;
+
+  while (fast !== null && fast.next !== null) {
     fast = fast.next.next;
     slow = slow.next;
   }
-  slow = reversed(slow); 
-  fast = head; 
+  slow = reversed(slow);
+  fast = head;
 
-  while(slow !== null) {
-    if(slow.val !== fast.val) return false;
-    slow = slow.next; 
+  while (slow !== null) {
+    if (slow.val !== fast.val) return false;
+    slow = slow.next;
     fast = fast.next;
   }
 
   return true;
 
   function reversed(node) {
-    let prev = null; 
-    while(node !== null) {
+    let prev = null;
+    while (node !== null) {
       let next = node.next;
-      node.next = prev; 
+      node.next = prev;
       prev = node;
       node = next;
     }
-    return prev; 
+    return prev;
   }
 }

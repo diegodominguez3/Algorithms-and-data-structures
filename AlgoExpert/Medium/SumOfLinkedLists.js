@@ -27,3 +27,28 @@ function toLinkedList(nums) {
   }
   return list;
 }
+
+// Correct approach O(max(m,n)) time O(max(m,n)) space where m and n are the lengths of the respective linked lists
+function sumOfLinkedLists(linkedListOne, linkedListTwo) {
+  // Write your code here.
+  let carry = 0;
+  let dummy = new LinkedList(0);
+  let currentNode = dummy;
+  let nodeOne = linkedListOne;
+  let nodeTwo = linkedListTwo;
+  while (nodeOne !== null || nodeTwo !== null || carry !== 0) {
+    const valueOne = nodeOne !== null ? nodeOne.value : 0;
+    const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
+    const sum = valueOne + valueTwo + carry;
+
+    const newValue = sum % 10;
+    const newNode = new LinkedList(newValue);
+    currentNode.next = newNode;
+    currentNode = newNode;
+
+    carry = Math.floor(sum / 10);
+    nodeOne = nodeOne !== null ? nodeOne.next : null;
+    nodeTwo = nodeTwo !== null ? nodeTwo.next : null;
+  }
+  return dummy.next;
+}

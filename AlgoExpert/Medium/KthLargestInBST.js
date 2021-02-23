@@ -1,4 +1,4 @@
-//My approach inorder traversal
+//My approach rightmost traversal
 // O(n) time O(n) space
 function findKthLargestValueInBst(tree, k) {
   // Write your code here.

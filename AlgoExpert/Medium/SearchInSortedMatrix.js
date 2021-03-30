@@ -24,3 +24,21 @@ function searchInSortedMatrix(matrix, target) {
     return -1; 
   } 
 }
+
+//Best solution 
+// O(n + m) time and O(1) space
+function searchInSortedMatrix(matrix, target) {
+  // Write your code here.
+	let row = 0; 
+	let col = matrix[0].length - 1; 
+	while(row < matrix.length && col >= 0) {
+		if(matrix[row][col] > target) {
+			col -= 1;
+		} else if(matrix[row][col] < target) {
+			row += 1;
+		} else {
+			return [row, col]; 
+		}
+	}
+	return [-1,-1]; 
+}

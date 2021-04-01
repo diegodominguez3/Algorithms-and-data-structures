@@ -30,3 +30,24 @@ function sunsetViews(buildings, direction) {
 	} 
 	return output; 
 }
+
+//Clean solution
+//Same time and space complexity 
+function sunsetViews(buildings, direction) {
+  // Write your code here.
+	const buildingsWithView = [];
+	const steps = direction === 'WEST' ? 1 : -1;
+	let i = direction === 'WEST' ? 0 : buildings.length - 1;
+	let highest = 0;
+	while(i >= 0 && i < buildings.length) {
+		const current = buildings[i]; 
+		if(current > highest) {
+			highest = current; 
+			buildingsWithView.push(i); 
+		}
+		i += steps;
+	}
+	
+	if(direction === 'EAST') buildingsWithView.reverse(); 
+	return buildingsWithView; 
+}

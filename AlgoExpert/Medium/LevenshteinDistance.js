@@ -13,6 +13,7 @@ function levenshteinDistance(str1, str2) {
 
     for (let row = 1; row < str1.length + 1; row++) {
         for (let col = 1; col < str2.length + 1; col++) {
+            
             if (str1[row - 1] === str2[col - 1]) {
                 edits[row][col] = edits[row - 1][col - 1];
             } else {
